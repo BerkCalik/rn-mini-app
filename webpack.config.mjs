@@ -236,6 +236,7 @@ export default env => {
         name: 'rnminiapp',
         exposes: {
           './App': './App',
+          './ScreenC': './src/ScreenC'
         },
         shared: {
           react: {
@@ -247,6 +248,16 @@ export default env => {
             ...Repack.Federated.SHARED_REACT_NATIVE,
             requiredVersion: '0.71.8',
             eager: STANDALONE,
+          },
+          '@react-navigation/native': {
+            singleton: true,
+            eager: STANDALONE,
+            requiredVersion: '6.0.13',
+          },
+          '@react-navigation/native-stack': {
+            singleton: true,
+            eager: STANDALONE,
+            requiredVersion: '6.9.1',
           },
         },
       }),
